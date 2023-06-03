@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('navbar') %>
+    
+    <div class="form-container">
+        <div class="form-field">
+            <form action="" method="post">
+                <label for="file">Product's image</label>
+                <input type="file" name="upload_file" id="">
+                <label for="text">Product</label>
+                <input type="text" >
+                <label for="text">Product's Detail</label>
+                <textarea name="textarea" id="" cols="30" rows="10"></textarea>
+                <label for="text">Product's Price</label>
+                <input type="text">
+                <label for="text">Product's Rating</label>
+                <input type="text">
+                <button class="form-btn">Uplode</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+cookie-parser ejs express express-session mongoose multer nodemon mongodb

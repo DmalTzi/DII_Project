@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="logo">
+            <a href="/"><img src="./../image/LOGO.png" alt="" width="140px"></a>
+        </div>
+        <div class="nav-link">
+            <ul class="nav-link-list">
+                <li class="nav"><a href="/">Home</a></li>
+                <li class="nav"><a href="/product">Product</a></li>
+                <li class="nav"><a href="/about">About Us</a></li>
+                <li class="nav dropdown-link"><a href="/about">Back-end</a>
+                    <ul class="nav-drop-down">
+                        <li><a href="">dropdown1</a></li>
+                        <li><a href="">dropdown2</a></li>
+                        <li><a href="">dropdown3</a></li>
+                    </ul>
+                </li>
+                <li class="nav"><a href="/login">Log in</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="form-container">
+        <div class="form-field">
+            <form action="" method="post">
+                <label for="file">Product's image</label>
+                <input type="file" name="upload_file" id="">
+                <label for="text">Product</label>
+                <input type="text" >
+                <label for="text">Product's Detail</label>
+                <textarea name="textarea" id="" cols="30" rows="10"></textarea>
+                <label for="text">Product's Price</label>
+                <input type="text">
+                <label for="text">Product's Rating</label>
+                <input type="text">
+                <button class="form-btn">Uplode</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

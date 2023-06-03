@@ -32,26 +32,59 @@ body {
     align-items: center;
 }
 
-.nav-link-list li {
+.nav-link-list .nav {
     list-style: none;
-    margin-right: 4rem;
+    padding: 0 2rem 0 2rem;
+    position: relative;
+    
 }
 
-.nav-link-list li a {
+.nav-link-list .nav a {
     text-decoration: none;
+    /* margin: 0 2rem 0 2rem; */
     color: var(--Yellow);
 }
 
+
+.nav-drop-down {
+    position: absolute;
+    display: block;
+    background-color: var(--blue);
+    border: black 2px solid;
+    top: 120%;
+    border-radius: 1rem;
+    padding: 0rem 1rem 0rem 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s;
+}
+
+.dropdown-link:hover .nav-drop-down{
+    top: 105%;
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-drop-down li {
+    list-style: none;
+    padding: 1rem 0 1rem 0;
+    /* padding: 1rem; */
+}
 
 .main-container {
     display: flex;
 }
 
+.long {
+    height: 1000px;
+}
+
 .side-bar-container {
     background-color: var(--blue);
-    width: 50%;
+    width: 70%;
+    max-height: 500px;
     margin: 2rem;
-    padding: 1rem 3rem 5rem 1rem;
+    padding: 1rem 0rem 0rem 1rem;
 }
 
 .side-bar-container .side-bar li {
@@ -149,7 +182,7 @@ body {
     width: 50vw;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], textarea, input[type=file]{
     width: 100%;
     padding: 12px 20px;
     border-radius: 2rem;
@@ -216,3 +249,28 @@ input[type=text], input[type=password] {
     font-size: 30px;
 }
 
+/* form */
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    
+}
+
+.form-field{
+    width: 50vw;
+}
+
+.form-btn{
+    background-color: var(--Yellow);
+    color: rgb(0, 0, 0);
+    margin-top: 1rem;
+    padding: 12px 20px;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
