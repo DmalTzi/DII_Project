@@ -287,12 +287,16 @@ input[type=text], input[type=password], textarea, input[type=file]{
     cursor: pointer;
 }
 
-.home-container2 {
+.home-container1 {
     display: flex;
 }
 
-.home-container2 .home-content-container h1 {
-    font-size: 30px;
+.home-content-container h1 {
+    font-size: 100px;
+}
+
+.home-content-container p {
+    font-size: 50px;
 }
 
 /* form */
