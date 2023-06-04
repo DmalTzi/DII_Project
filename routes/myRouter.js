@@ -74,7 +74,7 @@ router.get('/manage',(req,res)=>{
 router.get('/delete/:id',(req,res)=>{
     Product.findByIdAndDelete(req.params.id,{useFindAndModify:false}).exec(err=>{
         if(err) console.log(err)
-        res.redirect('/manage',{session:req.session.login})
+        res.redirect('/manage')
     })
 })
 
@@ -102,7 +102,10 @@ router.post('/update',(req,res)=>{
 })
 
 router.post("/delete/:id",(req,res)=>{
-    Product.findById()
+    Product.findByIdAndDelete(req.params.id,{useFindAndModify:true}).exec(err=>{
+        if(err) console.log(err)
+        res.redirect('/manage')
+    })
 })
 
 router.post('/insert',upload.single("ProductImage") ,(req,res)=>{
