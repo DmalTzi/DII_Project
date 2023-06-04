@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta product="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
@@ -37,12 +37,12 @@
                         <th>Price</th>
                         <th>Rating</th>
                     </tr>
-                    <% Object.values(name).forEach(function(item){%>
+                    <% Object.values(product).forEach(function(item){%>
                     <tr class="sub-product-row">
-                        <th><img src="image/product1.png" alt=""><%= item.name%></th>
-                        <th>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam quam rerum ea suscipit aperiam deserunt qui vero expedita itaque minus.</th>
-                        <th>500$</th>
-                        <th>&#9733; 5</th>
+                        <th><img class="product-image" src="/image/products/<%= item.image%>" alt=""></th>
+                        <th><%= item.detail%></th>
+                        <th><%= item.price%></th>
+                        <th>&#9733; <%= item.rating%></th>
                     </tr>
                     <% }) %>
                 </table>

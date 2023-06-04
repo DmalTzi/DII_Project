@@ -15,18 +15,20 @@
     
     <div class="form-container">
         <div class="form-field">
-            <form action="" method="post">
+            <form action="/insert" method="post" enctype="multipart/form-data">
                 <label for="file">Product's image</label>
-                <input type="file" name="upload_file" id="">
-                <label for="text">Product</label>
-                <input type="text" >
+                <input type="file" name="ProductImage" id="">
+                <label for="text">Product's Name</label>
+                <input type="text" name="ProductName" >
                 <label for="text">Product's Detail</label>
-                <textarea name="textarea" id="" cols="30" rows="10"></textarea>
+                <textarea name="ProductDetail" id="" cols="30" rows="10"></textarea>
                 <label for="text">Product's Price</label>
-                <input type="text">
+                <input type="text" name="ProductPrice">
                 <label for="text">Product's Rating</label>
-                <input type="text">
-                <button class="form-btn">Uplode</button>
+                <input type="text" name="ProductRating">
+                <label for="text">Product's Catagory</label>
+                <input type="text" name="ProductCatagory">
+                <button type="submit" class="form-btn">Uplode</button>
             </form>
         </div>
     </div>

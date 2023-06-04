@@ -1,1 +1,1 @@
-cookie-parser ejs express express-session mongoose multer nodemon mongodb
+cookie-parser ejs express express-session mongoose@6.10.0 multer nodemon mongodb
