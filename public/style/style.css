@@ -126,7 +126,7 @@ body {
 }
 
 .sub-product-row th{
-    background-color: var(--blue);
+    /* background-color: var(--blue); */
     color: var(--Yellow);
     padding: 1rem;
     width: 1000px;
@@ -140,6 +140,46 @@ body {
 .product-image {
     min-width: 200px;
     max-width: 400px;
+}
+
+.sub-row-product-color{
+    background-color: var(--blue);
+}
+
+.manage-container-parent {
+    background-color: var(--gray); 
+}
+
+.manage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-container a {
+    text-decoration: none;
+    color: var(--Yellow);
+}
+
+.manage-delete {
+    background-color: red;
+    width: 100px;
+    padding: 1rem;
+    border-radius: 5rem;
+    margin: 5px;
+}
+
+.manage-edit {
+    color: var(--Yellow);
+    background-color: green;
+    font-size: 20px;
+    width: 100px;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5rem;
+    margin: 5px;
 }
 
 
@@ -262,7 +302,9 @@ input[type=text], input[type=password], textarea, input[type=file]{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 120vh;
+    min-height: 120vh;
+    max-height: auto;
+    margin: 5rem 0;
     
 }
 

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta product="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -38,16 +38,28 @@
                         <th>Rating</th>
                     </tr>
                     <% Object.values(product).forEach(function(item){%>
-                    <tr class="sub-product-row">
-                        <th class="sub-row-product-color"><img class="product-image" src="/image/products/<%= item.image%>" alt=""></th>
-                        <th class="sub-row-product-color"><%= item.detail%></th>
-                        <th class="sub-row-product-color"><%= item.price%></th>
-                        <th class="sub-row-product-color">&#9733; <%= item.rating%></th>
-                    </tr>
-                    <% }) %>
+                        <tr class="sub-product-row">
+                            <th class="sub-row-product-color"><img class="product-image" src="/image/products/<%= item.image%>" alt=""></th>
+                            <th class="sub-row-product-color"><%= item.detail%></th>
+                            <th class="sub-row-product-color"><%= item.price%></th>
+                            <th class="sub-row-product-color">&#9733; <%= item.rating%></th>
+                            <th class="manage-container-parent">
+                                <div class="manage-container">
+                                    <a href="/delete/<%= item.id%>" class="manage-delete">Delete</a>
+                                    <!-- <a href="" class="manage-edit">Edit</a> -->
+                                    <form action="/edit" method="post">
+                                        <input type="hidden" name="edit_id" value="<%= item.id%>">
+                                        <button class="manage-edit">Edit</button>
+                                    </form>
+                                </div>
+                            </th>
+                        </tr>
+                        
+                        <% }) %>
                 </table>
             </div>
         </div>
     </section>
+    <div class="long" ></div>
 </body>
 </html>
