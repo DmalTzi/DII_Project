@@ -11,20 +11,14 @@
     <title>Document</title>
 </head>
 <body>
-    <%- include('navbar') %>
+    <% if(session){%>
+        <%- include('navbaradmin') %>
+        <%}else{%>
+            <%- include('navbar') %>
+            <%}%>
 
     <section class="main-container">
-        <aside class="side-bar-container">
-            <ul class="side-bar">
-                <li><a href="#">All</a></li>
-                <li><a href="#">File ►</a></li>
-                <li><a href="#">Hightlight ►</a></li>
-                <li><a href="#">Liquid ►</a></li>
-                <li><a href="#">Pen ►</a></li>
-                <li><a href="#">Pencil ►</a></li>
-                <li><a href="#">Sketch paper ►</a></li>
-            </ul>
-        </aside>
+        <%- include('sidebar') %>
         <div class="main-content-container">
             <div class="head-main-content">
                 <h1>Product List</h1>

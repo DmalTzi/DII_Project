@@ -17,61 +17,71 @@ const upload = multer({
 })
 7
 router.get('/',(req,res) =>{
-    res.render('home')
+    res.render('home',{session:req.session.login})
 })
 
 router.get('/product',(req,res) =>{
     Product.find().exec((err,doc)=>{
-        res.render('product',{product:doc})
+        res.render('product',{product:doc,session:req.session.login})
     })
 })
 
 router.get('/about',(req,res)=>{
-    res.render('about')
+    res.render('about',{session:req.session.login})
 })
 
 router.get('/login',(req,res)=>{
-    res.render('login')
+    res.render('login',{session:req.session.login})
 })
 
 router.post('/signin',(req,res)=>{
     console.log(req.body)
     const username = req.body.username
     const password = req.body.password
-    const timeExpire = 30000  
+    const timeExpire = 30000000000000000000000000000
     console.log(username)   
     console.log(password)
 
-    if(username === "admin" && password==="123"){
-        req.session.username = username
-        req.session.password = password
-        req.session.login = true
-        req.session.cookie.maxAge=timeExpire
-        res.redirect('/manage')
+    if (req.session.login){
+        res.redirect('/product')
+    }else{
+        if(username === "admin" && password==="123"){
+            req.session.username = username
+            req.session.password = password
+            req.session.login = true
+            req.session.cookie.maxAge=timeExpire
+            res.redirect('/manage')
+        }
     }
+
+    
 })
 
 router.get('/addform',(req,res)=>{
-    res.render("form")
+    res.render("form",{session:req.session.login})
 })
 
 router.get('/manage',(req,res)=>{
-    Product.find().exec((err,doc)=>{
-        res.render('manage',{product:doc})
-    })
+    if(req.session.login){
+        Product.find().exec((err,doc)=>{
+            res.render('manage',{product:doc,session:req.session.login})
+        })
+    }else{
+        res.redirect('/login')
+    }
 })
 
 router.get('/delete/:id',(req,res)=>{
     Product.findByIdAndDelete(req.params.id,{useFindAndModify:false}).exec(err=>{
         if(err) console.log(err)
-        res.redirect('/manage')
+        res.redirect('/manage',{session:req.session.login})
     })
 })
 
 router.post('/edit',(req,res)=>{
     const edit_id = req.body.edit_id
     Product.findOne({_id:edit_id}).exec((err,doc)=>{
-        res.render('edit',{product:doc})
+        res.render('edit',{product:doc,session:req.session.login})
     })
 })
 
@@ -111,5 +121,42 @@ router.post('/insert',upload.single("ProductImage") ,(req,res)=>{
     })
     console.log(data)
 })
+
+router.get('/sketchpaper',(req,res)=>{
+    Product.find().exec((err,doc)=>{
+        res.render('sketchpaper',{product:doc,session:req.session.login})
+    })
+})
+
+router.get('/pencil',(req,res)=>{
+    Product.find().exec((err,doc)=>{
+        res.render('pencil',{product:doc,session:req.session.login})
+    })
+})
+
+router.get('/pen',(req,res)=>{
+    Product.find().exec((err,doc)=>{
+        res.render('pen',{product:doc,session:req.session.login})
+    })
+})
+
+router.get('/liquid',(req,res)=>{
+    Product.find().exec((err,doc)=>{
+        res.render('liquid',{product:doc,session:req.session.login})
+    })
+})
+
+router.get('/hightlightpen',(req,res)=>{
+    Product.find().exec((err,doc)=>{
+        res.render('hightlightpen',{product:doc,session:req.session.login})
+    })
+})
+
+router.get('/file',(req,res)=>{
+    Product.find().exec((err,doc)=>{
+        res.render('file',{product:doc,session:req.session.login})
+    })
+})
+
 
 module.exports = router 

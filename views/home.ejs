@@ -11,7 +11,11 @@
     <title>Document</title>
 </head>
 <body>
-    <%- include('navbar') %>
+    <% if(session){%>
+        <%- include('navbaradmin') %>
+        <%}else{%>
+            <%- include('navbar') %>
+            <%}%>
 
     <section>
         <div class="home-container1">

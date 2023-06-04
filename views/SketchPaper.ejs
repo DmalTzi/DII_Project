@@ -32,12 +32,14 @@
                         <th>Rating</th>
                     </tr>
                     <% Object.values(product).forEach(function(item){%>
+                        <% if(item.catagory == "sketch_paper"){%>
                     <tr class="sub-product-row">
                         <th class="sub-row-product-color"><img class="product-image" src="/image/products/<%= item.image%>" alt=""></th>
                         <th class="sub-row-product-color"><%= item.detail%></th>
                         <th class="sub-row-product-color"><%= item.price%></th>
                         <th class="sub-row-product-color">&#9733; <%= item.rating%></th>
                     </tr>
+                    <%}%>
                     <% }) %>
                 </table>
             </div>
