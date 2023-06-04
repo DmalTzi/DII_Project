@@ -158,5 +158,10 @@ router.get('/file',(req,res)=>{
     })
 })
 
+router.get('/logout',(req,res)=>{
+    req.session.login = false
+    res.redirect('/')
+})
+
 
 module.exports = router 

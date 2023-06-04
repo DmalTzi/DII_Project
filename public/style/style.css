@@ -185,26 +185,26 @@ body {
 
 /* About Us */
 
-.aboutus-container {
+
+.image-aboutus-container {
+    height: 80vh;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.profile-image {
+.image-aboutus img{
+    width: 200px;
+}
+
+.image-aboutus h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    margin: 2rem;
-    width: 300%;
+    flex-direction: column;
+    font-size: 30px;
 }
 
-.profile-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    margin: 2rem;
-}
 
 /* login */
 
@@ -325,4 +325,18 @@ input[type=text], input[type=password], textarea, input[type=file]{
     border: none;
     cursor: pointer;
     width: 100%;
+}
+
+
+.footer-container{
+    background-color: var(--blue);
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.follow-container {
+    display: flex;
+    align-items: center;
 }
