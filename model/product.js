@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')
 
 // connect mongodb alats
-const mongodburl = "mongodb+srv://DmalTzi:1234@cluster0.wp3h7jh.mongodb.net/?retryWrites=true&w=majority"
+const mongodburl = "<Your MongoDB url>"
 
 
 mongoose.connect(mongodburl,{
