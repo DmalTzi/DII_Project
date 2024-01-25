@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../style/style.css">
+    <title>Document</title>
+    <style>
+        .img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <% if(session){%>
+        <%- include('navbaradmin') %>
+        <%}else{%>
+            <%- include('navbar') %>
+            <%}%>
+    
+    <div class="form-container">
+        <div class="form-field">
+            <form action="/update" method="post">
+                <input type="hidden" value="<%= product.id%>" name="update_id">
+                <div class="img-container">
+                    <img src="/image/products/<%= product.image%>" alt=""><br>
+                </div>
+
+                <label for="text">Product's Name</label>
+                <input type="text" name="ProductName" value="<%= product.name%>">
+
+                <label for="text">Product's Detail</label>
+                <textarea name="ProductDetail" id="" cols="30" rows="10" ><%= product.detail%></textarea>
+
+                <label for="text">Product's Price</label>
+                <input type="text" name="ProductPrice" value="<%= product.price%>">
+
+                <label for="text">Product's Rating</label>
+                <input type="text" name="ProductRating" value="<%= product.rating%>">
+
+                <label for="text">Product's Catagory</label>
+                <input type="text" name="ProductCatagory" value="<%= product.catagory%>">
+
+                <button type="submit" class="form-btn">Update</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

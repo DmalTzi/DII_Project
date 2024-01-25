@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <% if(session){%>
+        <%- include('navbaradmin') %>
+        <%}else{%>
+            <%- include('navbar') %>
+            <%}%>
+    
+    <div class="form-container">
+        <div class="form-field">
+            <form action="/insert" method="post" enctype="multipart/form-data">
+                <label for="file">Product's image</label>
+                <input type="file" name="ProductImage" id="">
+                <label for="text">Product's Name</label>
+                <input type="text" name="ProductName" >
+                <label for="text">Product's Detail</label>
+                <textarea name="ProductDetail" id="" cols="30" rows="10"></textarea>
+                <label for="text">Product's Price</label>
+                <input type="text" name="ProductPrice">
+                <label for="text">Product's Rating</label>
+                <input type="text" name="ProductRating">
+                <label for="text">Product's Catagory</label>
+                <input type="text" name="ProductCatagory">
+                <button type="submit" class="form-btn">Uplode</button>
+            </form>
+        </div>
+    </div>
+    <%- include('footer') %>
+</body>
+</html>
